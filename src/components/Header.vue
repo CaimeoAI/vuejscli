@@ -1,9 +1,9 @@
 <template>
     <header>
         <h1>Task Tracker</h1>
-        <ButtonComp text='Add Task' color='steelblue'/>
-        <ButtonComp text='Edit Task' color='green'/>
-        <ButtonComp text='Delete Task' color='red'/>
+        <ButtonComp @click="addTask()" text='Add Task' color='steelblue'/>
+        <ButtonComp @click="editTask()" text='Edit Task' color='green'/>
+        <ButtonComp @click="deleteTask()" text='Delete Task' color='red'/>
     </header>
 </template>
 
@@ -15,6 +15,18 @@
         name: 'HeaderComp',
         components: {
             ButtonComp
+        },
+        methods: {
+            addTask() {
+                console.log('add task');
+            },
+            editTask() {
+                console.log('edit task');
+            },
+            deleteTask() {
+                console.log('delete task');
+            },
+
         }
     }
 </script>
