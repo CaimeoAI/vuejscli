@@ -1,14 +1,17 @@
 <template>
   <div class="container">
-    <h1>Hello World</h1>
+    <HeaderComp/>
   </div>
 </template>
 
 <script>
 
+import HeaderComp from './components/Header'
+
 export default {
   name: 'App',
   components: {
+    HeaderComp
   }
 }
 </script>
