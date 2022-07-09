@@ -3,7 +3,6 @@
         <h1>Task Tracker</h1>
         <ButtonComp @click="addTask()" text='Add Task' color='steelblue'/>
         <ButtonComp @click="editTask()" text='Edit Task' color='green'/>
-        <ButtonComp @click="deleteTask()" text='Delete Task' color='red'/>
     </header>
 </template>
 
