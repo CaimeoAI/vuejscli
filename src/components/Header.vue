@@ -1,8 +1,7 @@
 <template>
     <header>
         <h1>Task Tracker</h1>
-        <ButtonComp @click="addTask()" text='Add Task' color='steelblue'/>
-        <ButtonComp @click="editTask()" text='Edit Task' color='green'/>
+        <ButtonComp @toggle-add-task="$emit('toggle-add-task')" text='Add Task' color='steelblue'/>
     </header>
 </template>
 
@@ -16,16 +15,9 @@
             ButtonComp
         },
         methods: {
-            addTask() {
-                console.log('add task');
+            addClick() {
+                this.$emit('toggle-add-task', true)
             },
-            editTask() {
-                console.log('edit task');
-            },
-            deleteTask() {
-                console.log('delete task');
-            },
-
         }
     }
 </script>
