@@ -1,19 +1,56 @@
 <template>
   <div class="container">
     <HeaderComp/>
+    <TasksComp :tasks="tasks"/>
   </div>
 </template>
 
 <script>
 
 import HeaderComp from './components/Header'
-
+import TasksComp from './components/Tasks'
 
 export default {
+
   name: 'App',
+
   components: {
-    HeaderComp
+    HeaderComp,
+    TasksComp
+  },
+
+  data() {
+    return {
+      tasks: [],
+    }
+  },
+
+  created() {
+    this.tasks = [
+
+      {
+        id: 1,
+        text: 'Walking the dog',
+        day: 'March 1st at 12:00pm',
+        reminder: true,
+      },
+
+      {
+        id: 2,
+        text: 'Meeting with the Board',
+        day: 'March 3rd at 3:00pm',
+        reminder: true,
+      },
+
+      {
+        id: 3,
+        text: 'Buying Groceries',
+        day : 'April 3rd at 3:00pm',
+        reminder: false,
+      }
+    ]
   }
+
 }
 </script>
 
