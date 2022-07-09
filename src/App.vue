@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <HeaderComp/>
+    <AddTask/>
     <TasksComp @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
   </div>
 </template>
@@ -9,6 +10,7 @@
 
 import HeaderComp from './components/Header'
 import TasksComp from './components/Tasks'
+import AddTask from './components/AddTask'
 
 export default {
 
@@ -16,7 +18,8 @@ export default {
 
   components: {
     HeaderComp,
-    TasksComp
+    TasksComp,
+    AddTask
   },
 
   data() {
