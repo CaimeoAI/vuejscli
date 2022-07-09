@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HeaderComp/>
-    <AddTask/>
+    <AddTask @add-task="addTask"/>
     <TasksComp @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
   </div>
 </template>
@@ -39,7 +39,12 @@ export default {
       console.log(id);
       this.tasks = this.tasks.map(task => task.id === id ? {...task, reminder: !task.reminder} : task)
     },
+
+    addTask(newTask) {
+      this.tasks.push(newTask)
+    }
   },
+
   created() {
     this.tasks = [
 
