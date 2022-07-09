@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HeaderComp/>
-    <TasksComp @delete-task="deleteTask" :tasks="tasks"/>
+    <TasksComp @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
   </div>
 </template>
 
@@ -30,9 +30,13 @@ export default {
       if (confirm('Are you sure you want to delete this task?')) {
               this.tasks = this.tasks.filter(task => task.id !== id)
       }
-    }
-  },
+    },
 
+    toggleReminder(id) {
+      console.log(id);
+      this.tasks = this.tasks.map(task => task.id === id ? {...task, reminder: !task.reminder} : task)
+    },
+  },
   created() {
     this.tasks = [
 
