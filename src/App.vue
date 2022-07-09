@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <HeaderComp @toggle-add-task="toggleAddTask"/>
+    <HeaderComp @toggle-add-task="toggleAddTask" :showAddTask="showAddTask"/>
     <div v-show="showAddTask">
       <AddTask @add-task="addTask"/>
     </div>
