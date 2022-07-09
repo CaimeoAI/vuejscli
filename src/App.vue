@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HeaderComp/>
-    <TasksComp :tasks="tasks"/>
+    <TasksComp @delete-task="deleteTask" :tasks="tasks"/>
   </div>
 </template>
 
@@ -22,6 +22,12 @@ export default {
   data() {
     return {
       tasks: [],
+    }
+  },
+
+  methods: {
+    deleteTask(id) {
+      console.log('task', id);
     }
   },
 
