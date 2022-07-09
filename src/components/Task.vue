@@ -1,5 +1,5 @@
 <template>
-    <div class="task">
+    <div :class="[task.reminder ? 'reminder' : '', 'task']">
         <h3>
             {{task.text}}
             <i class="fas fa-times"></i>
@@ -25,8 +25,12 @@
         width :100%;
         background-color: #f4f4f4;
         border-radius: 4px;
+        cursor: pointer;
     } 
 
+    .task.reminder {
+        border-left: 5px solid green;
+    }
     h3 {
         display: flex;
         align-items: center;
